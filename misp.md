@@ -31,7 +31,7 @@ Cheers, Chris
 * All Docker data is located under: /srv/misp-volumes.
 * Test approach for cert replacement.
 
-## ToDo
+## Open items
 * Document upgrade path.
 
 ## Enforce SELinux

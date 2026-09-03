@@ -49,12 +49,12 @@ echo $((($(date +%s) - $(stat -c %Y -- /etc/hosts)) / 86400)) days
 
 
 ## find differences between two files
-classical side to side comparsion
+classical side-by-side comparison
 ```bash
 diff -y file1 file2
 ```
 
-## enhanced comparsion with highlighting (package: vim-enhanced)
+## enhanced comparison with highlighting (package: vim-enhanced)
 ```bash
 vimdiff file1 file2
 ```

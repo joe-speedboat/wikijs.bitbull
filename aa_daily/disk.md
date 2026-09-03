@@ -48,7 +48,7 @@ dd if= sda-mbr.bin of=/dev/sdX bs=512 count=1
  chmod 755 /usr/local/bin/backup
 ```
 
-## create sparsed image files with dd
+## create sparse image files with dd
 ```bash
  dd if=/dev/zero of=guest.raw bs=1 count=0 seek=8G
 ```
@@ -84,7 +84,7 @@ udevadm info --query=all --name=/dev/sda | grep ID_SERIAL_SHORT | cut -d= -f2
 ```
 
 ## save and restore acl attributes
-be carefull, restore deleted my suid permissions :)
+be careful, restore deleted my suid permissions :)
 ```bash
 getfacl -R . >acl.txt
 setfacl --restore acl.txt

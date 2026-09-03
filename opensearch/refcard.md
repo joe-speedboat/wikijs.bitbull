@@ -196,8 +196,8 @@ curl -s -XGET localhost:9200/_cat/indices | grep  top_quer
 
 
 
-# SHRADS
-* list shrads
+# SHARDS
+* list shards
 ```bash
  curl -XGET localhost:9200/_cat/shards?v
 ```
@@ -233,7 +233,7 @@ curl -XPOST 'http://localhost:9200/_cluster/reroute?explain' -d '{
 }';echo
 ```
 
-## Delete Unassigned Shrads
+## Delete Unassigned Shards
 ```bash
 curl http://localhost:9200/_cluster/health?pretty
 curl -XGET localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason
