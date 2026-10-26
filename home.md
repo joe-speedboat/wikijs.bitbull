@@ -2,7 +2,7 @@
 title: Welcome
 description: Welcome
 published: true
-date: 2026-10-26T09:31:06.842Z
+date: 2026-10-26T10:12:55.318Z
 tags: 
 editor: markdown
 dateCreated: 2026-02-13T09:06:58.094Z
@@ -17,6 +17,8 @@ dateCreated: 2026-02-13T09:06:58.094Z
 * ✅ [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install)
 * [Event Foto Sharing](https://github.com/Memtly)
 * ✅ [Paperless Document Management](https://docs.paperless-ngx.com/)
+* [OPA & Gatekeeper](https://open-policy-agent.github.io/gatekeeper/website/docs/)
+* [Istio & Kiali](https://istio.io/latest/docs/ops/integrations/kiali/)
 
 # Quick and Dirty
 ```bash
