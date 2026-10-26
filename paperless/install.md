@@ -2,10 +2,10 @@
 title: Install Paperless-ngx
 description: Paperless-ngx on Rocky Linux 10 with Docker Compose, HTTPS, backup and restore
 published: true
-date: 2026-10-21T12:58:06.000Z
-tags: paperless, docker, rocky, backup
+date: 2026-10-26T14:13:46.509Z
+tags: backup, docker, paperless, rocky
 editor: markdown
-dateCreated: 2026-10-21T11:54:50.000Z
+dateCreated: 2026-10-25T16:51:08.027Z
 ---
 
 # Paperless-ngx

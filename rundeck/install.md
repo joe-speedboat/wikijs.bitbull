@@ -2,7 +2,7 @@
 title: Install Rundeck
 description: Install Rundeck, Setup Ansible, Configure Mixed Node Inventory (Lin/Win)
 published: true
-date: 2026-02-15T06:25:53.695Z
+date: 2026-10-26T14:11:47.941Z
 tags: ansible, rundeck
 editor: markdown
 dateCreated: 2026-02-14T08:20:30.237Z

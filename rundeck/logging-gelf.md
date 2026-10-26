@@ -2,7 +2,7 @@
 title: logging with gelf
 description: Log Rundeck application logs into gelf destination
 published: true
-date: 2026-02-15T06:26:20.916Z
+date: 2026-10-26T14:11:49.500Z
 tags: rundeck, logging
 editor: markdown
 dateCreated: 2026-02-14T13:55:52.316Z

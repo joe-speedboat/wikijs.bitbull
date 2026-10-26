@@ -2,7 +2,7 @@
 title: Make Soap
 description: Useful Infos about making your own soap
 published: true
-date: 2026-02-21T12:14:06.239Z
+date: 2026-10-26T14:12:42.038Z
 tags: hobby, soap
 editor: markdown
 dateCreated: 2026-02-21T12:14:06.239Z

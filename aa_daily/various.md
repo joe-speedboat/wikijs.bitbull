@@ -2,7 +2,7 @@
 title: various
 description: This and that
 published: true
-date: 2026-03-18T07:01:33.720Z
+date: 2026-10-26T14:11:34.911Z
 tags: cmd, helpers
 editor: markdown
 dateCreated: 2026-02-13T09:07:11.509Z

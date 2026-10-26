@@ -2,7 +2,7 @@
 title: Migrate COS8 to Alma8
 description: Inplace migration of centos8
 published: true
-date: 2026-02-15T06:24:04.650Z
+date: 2026-10-26T14:11:54.532Z
 tags: linux, upgrade, centos, alma
 editor: markdown
 dateCreated: 2026-02-15T05:39:37.931Z

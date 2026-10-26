@@ -2,7 +2,7 @@
 title: MISP Setup
 description: Install MISP
 published: true
-date: 2026-02-20T14:48:08.610Z
+date: 2026-10-26T14:12:35.709Z
 tags: misp, podman
 editor: markdown
 dateCreated: 2026-02-20T14:48:08.610Z

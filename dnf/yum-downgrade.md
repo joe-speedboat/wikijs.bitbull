@@ -2,7 +2,7 @@
 title: yum downgrade
 description: Downgrade Example with yum
 published: true
-date: 2026-02-20T14:12:21.488Z
+date: 2026-10-26T14:12:29.269Z
 tags: yum, downgrade
 editor: markdown
 dateCreated: 2026-02-20T14:12:21.488Z

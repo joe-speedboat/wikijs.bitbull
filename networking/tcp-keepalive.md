@@ -2,8 +2,8 @@
 title: TCP keepalive by kernel
 description: How to configure linux to keep tcp connections
 published: true
-date: 2026-02-15T07:21:32.296Z
-tags: networking, linux, keepalive, tcp
+date: 2026-10-26T14:12:06.080Z
+tags: networking, linux, keepalive
 editor: markdown
 dateCreated: 2026-02-15T07:21:31.146Z
 ---

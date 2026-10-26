@@ -2,7 +2,7 @@
 title: firewalld Refcard
 description: Firewalld Reference Card for RHEL10/Rocky10
 published: true
-date: 2026-02-21T20:25:11.829Z
+date: 2026-10-26T14:12:46.949Z
 tags: firewalld
 editor: markdown
 dateCreated: 2026-02-21T20:25:11.829Z

@@ -2,7 +2,7 @@
 title: inventory migration howto
 description: how to migrate/compare ansible inventories
 published: true
-date: 2026-04-23T13:48:15.196Z
+date: 2026-10-26T14:13:27.384Z
 tags: ansible, inventory, migration
 editor: markdown
 dateCreated: 2026-04-23T08:52:55.635Z

@@ -2,7 +2,7 @@
 title: find
 description: finding things
 published: true
-date: 2026-02-15T08:04:24.983Z
+date: 2026-10-26T14:11:24.786Z
 tags: cmd, helpers, find
 editor: markdown
 dateCreated: 2026-02-13T09:07:03.121Z

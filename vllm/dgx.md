@@ -2,7 +2,7 @@
 title: Qwen3.6-35B-A3B vLLM Setup on DGX Spark
 description: Optimized vLLM inference with MoE, AWQ 4-bit and MTP on the DGX Spark (GB10, Grace Blackwell ARM64)
 published: true
-date: 2026-06-08T11:32:14.699Z
+date: 2026-10-26T14:13:34.369Z
 tags: ai, vllm, dgx_spark
 editor: markdown
 dateCreated: 2026-06-08T09:10:50.089Z

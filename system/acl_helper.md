@@ -2,7 +2,7 @@
 title: ACL Refcard
 description: Access Control List Reference Card
 published: true
-date: 2026-02-21T12:08:33.890Z
+date: 2026-10-26T14:12:40.527Z
 tags: helpers, acl
 editor: markdown
 dateCreated: 2026-02-21T12:08:33.890Z

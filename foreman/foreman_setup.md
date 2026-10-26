@@ -2,7 +2,7 @@
 title: foreman setup
 description: Setup Foreman on Rocky Linux 9
 published: true
-date: 2026-02-20T14:35:31.130Z
+date: 2026-10-26T14:12:32.521Z
 tags: foreman
 editor: markdown
 dateCreated: 2026-02-20T14:35:31.130Z

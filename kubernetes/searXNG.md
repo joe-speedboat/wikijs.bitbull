@@ -2,7 +2,7 @@
 title: searXNG on K3S
 description: Install searXNG on K3S and configure hermes agent to work with
 published: true
-date: 2026-08-19T08:24:00.234Z
+date: 2026-10-26T14:13:37.764Z
 tags: kubernetes
 editor: markdown
 dateCreated: 2026-06-12T18:40:07.745Z

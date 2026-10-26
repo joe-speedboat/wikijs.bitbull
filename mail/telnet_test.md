@@ -2,7 +2,7 @@
 title: SMTP + IMAP via telnet
 description: Useful commands for mail testing
 published: true
-date: 2026-02-15T06:30:15.851Z
+date: 2026-10-26T14:11:57.751Z
 tags: mail
 editor: markdown
 dateCreated: 2026-02-15T06:00:50.911Z

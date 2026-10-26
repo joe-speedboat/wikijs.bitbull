@@ -2,7 +2,7 @@
 title: refcard
 description: Opensearch, Elastic Reference Card
 published: true
-date: 2026-02-20T14:24:25.635Z
+date: 2026-10-26T14:12:30.818Z
 tags: helpers, elastic, opensearch
 editor: markdown
 dateCreated: 2026-02-20T14:24:25.635Z

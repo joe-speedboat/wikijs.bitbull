@@ -2,7 +2,7 @@
 title: tmux helpers
 description: Most important tmux shortcuts
 published: true
-date: 2026-02-21T20:56:08.324Z
+date: 2026-10-26T14:12:52.025Z
 tags: helpers, tmux
 editor: markdown
 dateCreated: 2026-02-21T20:56:08.324Z

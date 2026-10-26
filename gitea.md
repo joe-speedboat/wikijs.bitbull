@@ -2,7 +2,7 @@
 title: gitea
 description: Gitea setup and configuration
 published: true
-date: 2026-02-15T06:26:48.105Z
+date: 2026-10-26T14:11:38.183Z
 tags: product, gitea
 editor: markdown
 dateCreated: 2026-02-13T09:07:14.779Z

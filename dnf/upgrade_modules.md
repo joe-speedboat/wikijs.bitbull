@@ -2,7 +2,7 @@
 title: Upgrade PHP (modules)
 description: How to upgrade PHP installed with dnf modules
 published: true
-date: 2026-03-18T11:52:56.210Z
+date: 2026-10-26T14:13:10.606Z
 tags: dnf
 editor: markdown
 dateCreated: 2026-03-18T11:52:56.210Z

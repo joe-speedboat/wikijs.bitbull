@@ -2,7 +2,7 @@
 title: Customize Models
 description: Customize Ollama models with Modelfiles.
 published: true
-date: 2026-04-13T15:42:11.301Z
+date: 2026-10-26T14:13:19.141Z
 tags: ai, ollama
 editor: markdown
 dateCreated: 2026-04-13T15:41:51.175Z

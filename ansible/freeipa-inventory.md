@@ -2,7 +2,7 @@
 title: Ansible FreeIPA inventory
 description: Ansible FreeIPA inventory setup
 published: true
-date: 2026-02-15T06:21:05.075Z
+date: 2026-10-26T14:11:52.903Z
 tags: ansible, rundeck, freeipa
 editor: markdown
 dateCreated: 2026-02-14T14:02:17.360Z

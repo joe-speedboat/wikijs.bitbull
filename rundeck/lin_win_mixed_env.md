@@ -2,7 +2,7 @@
 title: Win Lin mixed inv
 description: Rundeck mixed inventory for Linux and Windows hosts within same project
 published: true
-date: 2026-02-15T08:20:36.611Z
+date: 2026-10-26T14:12:20.515Z
 tags: ansible, rundeck, linux, windows
 editor: markdown
 dateCreated: 2026-02-15T08:20:35.432Z

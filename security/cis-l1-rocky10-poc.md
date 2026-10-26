@@ -1,8 +1,8 @@
 ---
-title: "POC: CIS L1 - Rocky10"
-description: "Here we test CIS L1 hardening on Rocky Linux 10"
+title: POC: CIS L1 - Rocky10
+description: Here we test CIS L1 hardening on Rocky Linux 10
 published: true
-date: 2026-06-02T05:33:15.834Z
+date: 2026-10-26T14:13:30.848Z
 tags: rocky10, poc, security, cis
 editor: markdown
 dateCreated: 2026-06-02T05:22:35.435Z

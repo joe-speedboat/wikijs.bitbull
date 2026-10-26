@@ -2,7 +2,7 @@
 title: MCP Agents explained
 description: How MCP Agents work
 published: true
-date: 2026-03-16T05:23:58.374Z
+date: 2026-10-26T14:13:07.279Z
 tags: blog, ai, mcp
 editor: markdown
 dateCreated: 2026-03-16T05:02:41.769Z

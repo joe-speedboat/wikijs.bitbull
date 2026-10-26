@@ -2,7 +2,7 @@
 title: vim
 description: vim hints
 published: true
-date: 2026-02-15T08:05:39.706Z
+date: 2026-10-26T14:11:36.524Z
 tags: cmd, helpers, vim
 editor: markdown
 dateCreated: 2026-02-13T09:07:13.151Z

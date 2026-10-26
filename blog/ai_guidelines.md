@@ -2,7 +2,7 @@
 title: AI Guidelines for IT Admins
 description: How get aware of risks when using AI
 published: true
-date: 2026-03-23T14:21:55.536Z
+date: 2026-10-26T14:13:02.417Z
 tags: helpers, blog, ai
 editor: markdown
 dateCreated: 2026-03-10T14:08:45.776Z

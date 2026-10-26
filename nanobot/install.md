@@ -2,7 +2,7 @@
 title: Install Nanobot
 description: Install Nanobot on Rocky10 with some features
 published: true
-date: 2026-03-23T05:39:15.549Z
+date: 2026-10-26T14:13:05.662Z
 tags: nanobot, ai
 editor: markdown
 dateCreated: 2026-03-13T06:20:01.705Z

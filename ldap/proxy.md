@@ -2,7 +2,7 @@
 title: OpenLDAP proxy
 description: setup openldap proxy on Rocky 9
 published: true
-date: 2026-02-24T07:24:30.866Z
+date: 2026-10-26T14:12:37.507Z
 tags: proxy, ldap, openldap
 editor: markdown
 dateCreated: 2026-02-20T14:52:11.530Z

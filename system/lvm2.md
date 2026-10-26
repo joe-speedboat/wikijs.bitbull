@@ -2,7 +2,7 @@
 title: LVM2 Refcard
 description: LVM2 Reference Card
 published: true
-date: 2026-02-21T20:09:40.680Z
+date: 2026-10-26T14:12:45.277Z
 tags: helpers, lvm
 editor: markdown
 dateCreated: 2026-02-21T20:09:40.680Z

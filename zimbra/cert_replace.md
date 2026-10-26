@@ -2,7 +2,7 @@
 title: Zimbra cert replace
 description: Howto replace cert in zimbra
 published: true
-date: 2026-02-15T07:44:07.786Z
+date: 2026-10-26T14:12:12.616Z
 tags: zimbra, certificate
 editor: markdown
 dateCreated: 2026-02-15T07:44:06.633Z

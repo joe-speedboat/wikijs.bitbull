@@ -2,7 +2,7 @@
 title: logfiles
 description: All about logfiles, journald, auditd
 published: true
-date: 2026-02-15T08:04:39.284Z
+date: 2026-10-26T14:11:26.298Z
 tags: cmd, helpers, logs, rh10
 editor: markdown
 dateCreated: 2026-02-13T09:07:04.845Z

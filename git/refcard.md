@@ -2,7 +2,7 @@
 title: Git - Useful Commands
 description: Daily needs
 published: true
-date: 2026-07-13T15:19:26.552Z
+date: 2026-10-26T14:13:42.980Z
 tags: gitea, git
 editor: markdown
 dateCreated: 2026-07-13T15:19:26.552Z

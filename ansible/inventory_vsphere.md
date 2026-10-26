@@ -2,7 +2,7 @@
 title: vSphere Inventory
 description: Ansible vSphere Inventory concept
 published: true
-date: 2026-03-02T10:52:20.050Z
+date: 2026-10-26T14:12:57.102Z
 tags: ansible, vsphere, inventory
 editor: markdown
 dateCreated: 2026-03-02T10:52:20.050Z

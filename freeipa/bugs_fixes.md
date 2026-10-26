@@ -2,7 +2,7 @@
 title: Bugs & Fixes
 description: FreeIPA/IDM Bugs and Solutions
 published: true
-date: 2026-02-24T07:21:56.535Z
+date: 2026-10-26T14:12:53.786Z
 tags: bugfix, freeipa
 editor: markdown
 dateCreated: 2026-02-24T07:19:28.650Z

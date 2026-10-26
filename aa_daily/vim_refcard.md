@@ -2,7 +2,7 @@
 title: vim refcard
 description: All the Vim commands you need
 published: true
-date: 2026-02-21T20:54:06.591Z
+date: 2026-10-26T14:12:50.281Z
 tags: helpers, vim
 editor: markdown
 dateCreated: 2026-02-21T20:46:22.960Z

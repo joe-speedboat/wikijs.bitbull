@@ -2,7 +2,7 @@
 title: Cheat Sheet
 description: Hermes Helper Sheet
 published: true
-date: 2026-06-05T16:27:43.602Z
+date: 2026-10-26T14:13:32.645Z
 tags: helpers, ai, hermes
 editor: markdown
 dateCreated: 2026-06-05T16:27:43.602Z

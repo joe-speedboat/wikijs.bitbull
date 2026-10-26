@@ -2,7 +2,7 @@
 title: winrm
 description: Winrm setup notes
 published: true
-date: 2026-06-09T14:18:22.902Z
+date: 2026-10-26T14:13:35.985Z
 tags: windows, winrm
 editor: markdown
 dateCreated: 2026-06-09T14:18:22.902Z

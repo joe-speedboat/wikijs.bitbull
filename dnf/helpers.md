@@ -2,7 +2,7 @@
 title: helpers
 description: Useful commands with dnf/yum
 published: true
-date: 2026-10-14T07:32:35.184Z
+date: 2026-10-26T14:12:07.730Z
 tags: linux, dnf, rpm
 editor: markdown
 dateCreated: 2026-02-15T07:24:17.428Z

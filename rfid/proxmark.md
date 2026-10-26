@@ -2,7 +2,7 @@
 title: proxmark
 description: Setup Proxmark on Ubuntu
 published: true
-date: 2026-02-20T15:01:51.775Z
+date: 2026-10-26T14:12:39.085Z
 tags: rfid, proxmark
 editor: markdown
 dateCreated: 2026-02-20T15:01:51.775Z

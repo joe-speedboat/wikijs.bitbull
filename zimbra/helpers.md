@@ -2,12 +2,11 @@
 title: Zimbra Helpers
 description: Useful Zimbra Notes
 published: true
-date: 2026-04-27T09:12:38.157Z
+date: 2026-10-26T14:12:43.639Z
 tags: helpers, zimbra
 editor: markdown
 dateCreated: 2026-02-21T12:19:21.072Z
 ---
-
 
 # Configuration
 

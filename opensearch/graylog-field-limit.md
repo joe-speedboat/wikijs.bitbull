@@ -1,8 +1,8 @@
 ---
-title: "Graylog - Admin Access Notes"
-description: "Graylog Data Node: Increase OpenSearch Field Limit to 5000"
+title: Graylog - Admin Access Notes
+description: Graylog Data Node: Increase OpenSearch Field Limit to 5000
 published: true
-date: 2026-06-30T10:40:19.357Z
+date: 2026-10-26T14:13:39.501Z
 tags: opensearch, graylog
 editor: markdown
 dateCreated: 2026-06-30T10:38:51.218Z

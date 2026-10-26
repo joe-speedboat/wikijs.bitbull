@@ -2,7 +2,7 @@
 title: refcard
 description: Foreman and Satellite Reference Card
 published: true
-date: 2026-02-15T06:21:40.139Z
+date: 2026-10-26T14:11:44.662Z
 tags: product, foreman, satellite
 editor: markdown
 dateCreated: 2026-02-13T09:07:21.403Z

@@ -2,7 +2,7 @@
 title: AWX Telegram notification
 description: AWX Ascender Telegram notification howto
 published: true
-date: 2026-02-15T08:16:20.374Z
+date: 2026-10-26T14:12:18.983Z
 tags: awx, ascender, telegram, notification
 editor: markdown
 dateCreated: 2026-02-15T08:16:19.229Z

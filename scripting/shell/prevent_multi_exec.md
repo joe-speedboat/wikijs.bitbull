@@ -2,7 +2,7 @@
 title: Prevent parallel exec
 description: Prevent shell script to run twice at same time
 published: true
-date: 2026-03-18T07:00:29.597Z
+date: 2026-10-26T14:13:08.922Z
 tags: shell
 editor: markdown
 dateCreated: 2026-03-18T07:00:29.597Z

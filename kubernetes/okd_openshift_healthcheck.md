@@ -2,7 +2,7 @@
 title: OKD Healthcheck 4.x
 description: Howto Check OKD or Openshift Clusters for health
 published: true
-date: 2026-02-15T08:44:32.707Z
+date: 2026-10-26T14:12:22.408Z
 tags: okd, openshift, kubernetes, healthcheck
 editor: markdown
 dateCreated: 2026-02-15T08:43:26.256Z

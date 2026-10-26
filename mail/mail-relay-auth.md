@@ -1,13 +1,12 @@
 ---
 title: Postfix mail relay with authentication
-description: this is a sample config to enable mail sending for system mails or forward mails from mailserver by smtp-auth. 
+description: this is a sample config to enable mail sending for system mails or forward mails from mailserver by smtp-auth.
 published: true
-date: 2026-02-15T06:30:32.333Z
+date: 2026-10-26T14:11:59.321Z
 tags: postfix, smtp
 editor: markdown
 dateCreated: 2026-02-15T06:11:34.983Z
 ---
-
 
 ## SMTP AUTH
 * `vi /etc/postfix/password`

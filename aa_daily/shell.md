@@ -2,7 +2,7 @@
 title: shell
 description: shell hints
 published: true
-date: 2026-02-15T08:05:05.590Z
+date: 2026-10-26T14:11:31.526Z
 tags: cmd, helpers
 editor: markdown
 dateCreated: 2026-02-13T09:07:08.190Z

@@ -2,7 +2,7 @@
 title: Expect examples
 description: Feed passwords and commands with Expect
 published: true
-date: 2026-02-15T06:22:46.049Z
+date: 2026-10-26T14:11:56.222Z
 tags: linux, expect
 editor: markdown
 dateCreated: 2026-02-15T05:52:13.129Z

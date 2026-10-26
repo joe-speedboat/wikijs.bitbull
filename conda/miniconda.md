@@ -2,7 +2,7 @@
 title: miniconda
 description: miniconda reference card
 published: true
-date: 2026-04-22T08:51:53.340Z
+date: 2026-10-26T14:13:24.032Z
 tags: ai, python, venv, conda
 editor: markdown
 dateCreated: 2026-04-22T05:04:05.533Z

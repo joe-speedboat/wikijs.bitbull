@@ -2,7 +2,7 @@
 title: ssh banners
 description: Legal notices
 published: true
-date: 2026-02-20T14:40:03.329Z
+date: 2026-10-26T14:12:34.045Z
 tags: ssh, motd, banner
 editor: markdown
 dateCreated: 2026-02-20T14:40:03.329Z

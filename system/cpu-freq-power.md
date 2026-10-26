@@ -2,7 +2,7 @@
 title: set cpu freq, depending on ac-state
 description: Howto set cpu frequency of notebook depending on its AC-state
 published: true
-date: 2026-03-01T18:29:05.508Z
+date: 2026-10-26T14:12:55.369Z
 tags: cpu
 editor: markdown
 dateCreated: 2026-03-01T18:29:05.508Z

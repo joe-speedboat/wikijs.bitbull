@@ -2,7 +2,7 @@
 title: Bugs & Fixes
 description: Diagnose Ollama 500 errors and model loading failures.
 published: false
-date: 2026-04-14T04:28:42.424Z
+date: 2026-10-26T14:13:17.507Z
 tags: bugfix, ai, ollama
 editor: markdown
 dateCreated: 2026-04-13T15:24:56.172Z

@@ -2,7 +2,7 @@
 title: Quadlet getting started
 description: Compare with Docker compose and examples
 published: true
-date: 2026-04-18T05:50:41.041Z
+date: 2026-10-26T14:13:22.201Z
 tags: podman, container, docker
 editor: markdown
 dateCreated: 2026-04-18T05:41:00.509Z

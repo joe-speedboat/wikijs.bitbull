@@ -2,7 +2,7 @@
 title: backup and disk
 description: backup, disk, san
 published: true
-date: 2026-02-15T08:03:49.253Z
+date: 2026-10-26T14:11:23.203Z
 tags: cmd, helpers, backup, blockdevice
 editor: markdown
 dateCreated: 2026-02-13T09:07:01.425Z

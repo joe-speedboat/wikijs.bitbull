@@ -2,7 +2,7 @@
 title: proxy.pac example
 description: Useful example rules of proxy.pac configuration file
 published: true
-date: 2026-02-15T06:24:29.973Z
+date: 2026-10-26T14:12:00.985Z
 tags: networking, proxy
 editor: markdown
 dateCreated: 2026-02-15T06:17:04.081Z

@@ -2,7 +2,7 @@
 title: CA cert management
 description: Manage and rollout CA Certs with FreeIPA (IDM) to clients
 published: false
-date: 2026-04-23T08:49:39.358Z
+date: 2026-10-26T14:13:25.544Z
 tags: freeipa, certificate
 editor: markdown
 dateCreated: 2026-04-23T08:49:05.329Z

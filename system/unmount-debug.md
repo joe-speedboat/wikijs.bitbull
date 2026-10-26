@@ -2,7 +2,7 @@
 title: Unmount blocked FS
 description: Resolving "Device is busy" When Unmounting
 published: true
-date: 2026-02-15T06:20:14.846Z
+date: 2026-10-26T14:12:02.726Z
 tags: linux, mount
 editor: markdown
 dateCreated: 2026-02-15T06:20:13.617Z
