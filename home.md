@@ -2,7 +2,7 @@
 title: Welcome
 description: Welcome
 published: true
-date: 2026-05-29T09:48:18.895Z
+date: 2026-10-26T09:31:06.842Z
 tags: 
 editor: markdown
 dateCreated: 2026-02-13T09:06:58.094Z
@@ -14,10 +14,9 @@ dateCreated: 2026-02-13T09:06:58.094Z
 # Bucket List
 * [https://wiki.app.tuxmint.com/en/Overleaf-LaTeX](https://wiki.app.tuxmint.com/en/Overleaf-LaTeX)
 * [OpenTelemetry - Getting Started](https://opentelemetry.io/docs/getting-started/ops/)
-* [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install)
+* ✅ [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install)
 * [Event Foto Sharing](https://github.com/Memtly)
-* [Paperless Document Management](https://docs.paperless-ngx.com/)
-
+* ✅ [Paperless Document Management](https://docs.paperless-ngx.com/)
 
 # Quick and Dirty
 ```bash
