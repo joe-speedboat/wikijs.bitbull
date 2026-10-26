@@ -47,7 +47,12 @@ import time
 ROOT = Path('/srv/paperless')
 SERVICES = {'webserver', 'db', 'broker', 'tika', 'gotenberg'}
 PARTS = ('compose', 'data', 'media', 'consume', 'export')
-PAYLOADS = ('database.dump', 'files.tar.gz', 'images.json', 'media.json')
+PAYLOADS = ('database.dump', 'files.tar.gz', 'images.json', 'media.json', 'comparison.json')
+# Deliberate allowlist: never serialize mail credentials, tokens or password hashes.
+COMPARISON_TABLES = ('documents_document', 'documents_tag', 'documents_document_tags',
+                     'documents_correspondent', 'documents_documenttype',
+                     'documents_storagepath', 'auth_user', 'auth_group',
+                     'auth_user_groups', 'auth_group_permissions', 'auth_user_user_permissions')
 
 
 def require(ok, message):
@@ -108,6 +113,83 @@ def media_hashes():
             for p in sorted((ROOT / 'media').rglob('*')) if p.is_file()}
 
 
+def comparison_manifest():
+    """Read one SQL snapshot while workers are stopped; persist IDs/hashes only."""
+    queries = []
+    for table in COMPARISON_TABLES:
+        row = "to_jsonb(t) - 'password' - 'last_login'" if table == 'auth_user' else 'to_jsonb(t)'
+        queries.append(f"'{table}', (SELECT coalesce(jsonb_agg({row} ORDER BY id), '[]'::jsonb) FROM {table} t)")
+    sql = 'SELECT jsonb_build_object(' + ','.join(queries) + ');'
+    raw = json.loads(output('exec', '-T', 'db', 'psql', '-X', '-qAt',
+                            '-v', 'ON_ERROR_STOP=1', '-U', 'paperless', '-d', 'paperless', '-c', sql))
+    result = {'schema': 1, 'tables': {}}
+    for table in COMPARISON_TABLES:
+        rows = raw[table]
+        result['tables'][table] = {'count': len(rows), 'rows': {
+            str(row['id']): hashlib.sha256(json.dumps(row, sort_keys=True,
+                separators=(',', ':'), ensure_ascii=True).encode()).hexdigest() for row in rows}}
+    docs = raw['documents_document']
+    trashed = sum(row.get('deleted_at') is not None for row in docs)
+    result['documents'] = {'active': len(docs) - trashed, 'trash': trashed,
+                           'ids': [row['id'] for row in docs]}
+    return result
+
+
+def validate_archive(path):
+    """Allow direct relative file symlinks only, wholly within one layout part.
+
+    Validate the complete graph before GNU tar sees it: no link ancestor, chain,
+    directory link, hardlink, duplicate or dangling target, regardless of order.
+    This includes HF snapshots/<revision>/<file> -> ../../blobs/<hash>.
+    """
+    with tarfile.open(path) as archive:
+        members = archive.getmembers()
+    index = {}
+    for member in members:
+        name = member.name.rstrip('/') if member.isdir() else member.name
+        parts = name.split('/')
+        require(not any(p in ('', '.', '..') for p in parts) and
+                len(parts) >= 2 and parts[0] == 'paperless' and parts[1] in PARTS and
+                (member.isfile() or member.isdir() or member.issym()) and
+                (len(parts) > 2 or member.isdir()), 'Unsafe archive member')
+        require(name not in index, 'Unsafe duplicate archive member')
+        index[name] = member
+    directories = {name for name, member in index.items() if member.isdir()}
+    for name in index:
+        pieces = name.split('/')
+        directories.update('/'.join(pieces[:end]) for end in range(2, len(pieces)))
+    for name, member in index.items():
+        parts = name.split('/')
+        for end in range(2, len(parts)):
+            parent = index.get('/'.join(parts[:end]))
+            require(parent is None or parent.isdir(), 'Unsafe archive ancestor')
+        if not member.issym():
+            continue
+        target = member.linkname
+        require(target and not target.startswith('/'), 'Unsafe absolute/empty link target')
+        resolved = parts[:-1]
+        components = target.split('/')
+        require(all(c not in ('', '.') for c in components), 'Unsafe noncanonical link target')
+        for position, component in enumerate(components):
+            if component == '..':
+                require(len(resolved) > 2, 'Unsafe escaping link target')
+                resolved.pop()
+            elif component not in ('', '.'):
+                resolved.append(component)
+            # Reject traversing any non-directory even if a later .. removes it.
+            candidate = index.get('/'.join(resolved))
+            if position < len(components) - 1:
+                require('/'.join(resolved) in directories and
+                        (candidate is None or candidate.isdir()), 'Unsafe link target ancestor')
+        final = '/'.join(resolved)
+        require(resolved[:2] == parts[:2] and final in index and index[final].isfile(),
+                'Unsafe link target (must be a direct regular file in the same part)')
+        for end in range(2, len(resolved)):
+            ancestor = index.get('/'.join(resolved[:end]))
+            require(ancestor is None or ancestor.isdir(), 'Unsafe link target ancestor')
+    return sum(m.size for m in members)
+
+
 def free_space(path, needed):
     require(shutil.disk_usage(path).free >= needed, 'Insufficient free disk space')
 
@@ -148,15 +230,19 @@ def backup(destination):
         # Set before stop: even a partial stop must trigger a restart attempt.
         stopped = True
         dc('stop', '-t', '120', 'webserver', stdout=subprocess.DEVNULL)
+        save(target / 'comparison.json', comparison_manifest())
         with (target / 'database.dump').open('wb') as stream:
             dc('exec', '-T', 'db', 'pg_dump', '-U', 'paperless', '-Fc', 'paperless', stdout=stream)
         with (target / 'database.dump').open('rb') as stream:
             dc('exec', '-T', 'db', 'pg_restore', '--list', stdin=stream,
                stdout=subprocess.DEVNULL)
-        run(['tar', '--selinux', '--xattrs', '-czf', str(target / 'files.tar.gz'),
+        run(['tar', '--selinux', '--xattrs', '--hard-dereference', '-czf', str(target / 'files.tar.gz'),
              '-C', str(ROOT.parent), *['paperless/' + p for p in PARTS]], stdout=subprocess.DEVNULL)
+        validate_archive(target / 'files.tar.gz')
         save(target / 'media.json', media_hashes())
         save(target / 'SHA256SUMS.json', {name: digest(target / name) for name in PAYLOADS})
+        for name in (*PAYLOADS, 'SHA256SUMS.json'):
+            (target / name).chmod(0o400)
     finally:
         if stopped:
             # Failure propagates; never report a successful backup on restart failure.
@@ -179,15 +265,7 @@ def validate_backup(source):
                 for v in images.values()), 'Invalid immutable image reference')
     require(images['db'].split('@')[0].split('/')[-1].split(':')[0] == 'postgres',
             'Expected PostgreSQL image')
-    # Never extract special files, symlinks, hardlinks or paths outside the layout.
-    with tarfile.open(source / 'files.tar.gz') as archive:
-        members = archive.getmembers()
-        for member in members:
-            parts = Path(member.name).parts
-            require(not member.name.startswith('/') and '..' not in parts and
-                    len(parts) >= 2 and parts[0] == 'paperless' and parts[1] in PARTS and
-                    (member.isfile() or member.isdir()), 'Unsafe archive member')
-        return images, sum(m.size for m in members)
+    return images, validate_archive(source / 'files.tar.gz')
 
 
 def restore(source, production, url):
@@ -259,6 +337,8 @@ def restore(source, production, url):
         with (source / 'database.dump').open('rb') as stream:
             dc('exec', '-T', 'db', 'pg_restore', '-U', 'paperless', '-d', 'paperless',
                '--exit-on-error', stdin=stream, stdout=subprocess.DEVNULL)
+        require(comparison_manifest() == json.loads((source / 'comparison.json').read_text()),
+                'Restored database comparison manifest differs (before application startup)')
         wait_stack()
         dc('exec', '-T', 'webserver', 'document_index', 'reindex', stdout=subprocess.DEVNULL)
     except BaseException:
@@ -440,6 +520,13 @@ Requires root, documented layout, GNU tar and Docker Compose v2 --wait support.
 Finish imports and pause external uploads first. Stops webserver, saves a custom
 PostgreSQL dump, compose/data/media/consume/export, hashes and immutable image
 references. Does not copy PostgreSQL data files, Valkey data, nginx or TLS material.
+Captures comparison.json while workers are stopped: active/trash counts, IDs and
+SHA-256 row hashes for documents (including content), tags/assignments, users,
+groups/permissions, correspondents, types and storage paths. Passwords and volatile
+last_login are excluded; mail credentials/tokens are not in this manifest.
+media.json covers every media file (originals, archives, thumbnails and trash).
+Both manifests are checksummed and sealed mode 0400 with the other payloads;
+restore never rewrites them. This is a fixed baseline, not root-proof/WORM storage.
 Attempts webserver restart even on failure; SUCCESS is written only after restart
 checks pass. A partial backup without SUCCESS is unusable. Catalog/checksum checks
 are not a restore test. SIGKILL/host failure can leave webserver stopped.
@@ -462,7 +549,18 @@ Only use trusted archives: checksums detect corruption, NOT malicious replacemen
 Compose configuration and database automation are executable trust boundaries.
 
 Validates SUCCESS, checksums, safe archive members, image digests and media hashes.
+Requires the new comparison.json payload; older backups without it are refused.
+Direct relative symlinks to regular files within the SAME compose/data/media/
+consume/export tree are supported, including HF ../../blobs cache links. Absolute,
+cross-tree, dangling, directory and chained/cyclic links are refused, as are
+duplicate paths, special files and any member below a link, independent of tar
+order. Link targets cannot contain empty or dot components. Hardlinks are saved
+as independent regular files during backup; hardlink archive entries are refused.
+Symlinks are never broadly dereferenced and caches are not removed.
 Pulls captured images, restores database/files, starts Paperless and reindexes.
+Database comparison against the backup-time baseline runs BEFORE Paperless starts
+or reindexes; mismatches stop the recovery stack. Do not compare against a changing
+source. Checksums do not authenticate the baseline; protect backup provenance.
 Default recovery uses an internal Docker network and --test-url. Use a dedicated
 isolated host: Docker internal networking does not isolate the Docker host or its
 proxies/mail services. --production explicitly permits external networking and

@@ -71,6 +71,8 @@ class Operations(unittest.TestCase):
             data = json.dumps([self.images.get(args[-1], 'webserver@sha256:' + 'b' * 64)]).encode()
         elif 'pg_dump' in args:
             data = b'fake dump for control-flow test only'
+        elif 'psql' in args:
+            data = json.dumps({t: [] for t in ops.COMPARISON_TABLES}).encode()
         elif '--version' in args:
             data = b'postgres (PostgreSQL) 18.1'
         elif 'pg_isready' in args and not self.ready:
@@ -137,12 +139,15 @@ class Operations(unittest.TestCase):
 
     def test_checksum_corruption_refused(self):
         backup = self.make_backup()
+        (backup / 'database.dump').chmod(0o600)
         (backup / 'database.dump').write_bytes(b'corrupt')
         with self.assertRaisesRegex(RuntimeError, 'checksum'):
             ops.validate_backup(backup)
 
     def test_archive_traversal_refused(self):
         backup = self.make_backup()
+        (backup / 'files.tar.gz').chmod(0o600)
+        (backup / 'SHA256SUMS.json').chmod(0o600)
         with tarfile.open(backup / 'files.tar.gz', 'w:gz') as archive:
             m = tarfile.TarInfo('paperless/media/../../escape')
             m.size = 1

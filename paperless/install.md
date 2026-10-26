@@ -255,6 +255,10 @@ The backup stops `webserver` (including consumer/workers), captures a custom Pos
 
 The destination must be root-owned, mode 0700 and outside `/srv/paperless`. The archive contains secrets and documents: copy the complete directory to an approved encrypted destination with retention, access control and failure/age monitoring. `/srv/backup` is local staging, **not protection against disk loss**. Include nginx configuration and TLS material in the encrypted host backup.
 
+`comparison.json` is a fixed backup-time baseline captured while workers are stopped: active/trash counts, document IDs and SHA-256 row hashes for document content/metadata, tags and assignments, users, groups/permissions, correspondents, types and storage paths. Password hashes and `last_login` are excluded; mail credentials and tokens are not collected. `media.json` separately hashes all media files, including originals, archives, thumbnails and trash. Both are covered by `SHA256SUMS.json` and sealed mode 0400 with the payloads. Restore never updates these baselines; file modes are not root-proof immutability or cryptographic authentication. Protect provenance and use immutable off-host storage where required. Older backups without `comparison.json` are refused by this revision.
+
+The archive validator permits **direct relative symlinks to regular files within the same top-level tree** (`compose`, `data`, `media`, `consume` or `export`), including Hugging Face `snapshots/<revision>/<file> -> ../../blobs/<hash>` cache links. It rejects absolute/cross-tree/dangling/directory links, chains/cycles, duplicate paths, special files and writes below a symlink, regardless of archive order. Empty/dot target components are unsupported. Hardlinked source files are archived as independent regular files; archive hardlink entries are rejected. Caches remain intact; symlinks are not broadly dereferenced. Unsupported layouts fail backup validation before `SUCCESS`, with a restart attempt.
+
 For a separate portable document export:
 
 ```bash
@@ -290,7 +294,7 @@ paperless restore \
 
 Recovery writes a root-only rendered `compose/compose.yaml` with immutable images; original configuration files remain as `*.pre-restore`. Edit the active rendered file for later configuration changes. Host HTTPS configuration is deliberately outside this application restore.
 
-Compare users, tags, mail rules, document counts **including trash**, and original/archive/thumbnail files with a backup-time inventory. The automatic full media hash comparison runs before workers start; these checks do not establish application-level recovery by themselves.
+Compare users, tags, mail rules, document counts **including trash**, and original/archive/thumbnail files with a backup-time inventory. The automatic full media hash comparison runs before workers start. After `pg_restore`, the CLI compares database state with `comparison.json` **before starting Paperless or rebuilding the index**; a mismatch stops the stack and retains diagnostic state. Do not regenerate a baseline from a changing source. Mail rules, credentials, custom fields, notes and other tables outside the explicit comparison allowlist still need separate acceptance checks; the full database dump retains them. These checks do not establish application-level recovery by themselves.
 
 Test real password login, document download, PDF preview and indexed search; repeat after restarting Paperless. Restore trash documents only in the test copy when needed for validation.
 
