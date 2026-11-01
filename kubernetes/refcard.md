@@ -2,7 +2,7 @@
 title: refcard
 description: Daily commands that make your life easier
 published: true
-date: 2026-11-01T12:50:55.653Z
+date: 2026-11-01T12:51:39.782Z
 tags: helpers, kubernetes
 editor: markdown
 dateCreated: 2026-02-17T17:11:22.686Z
