@@ -2,7 +2,7 @@
 title: refcard
 description: Daily commands that make your life easier
 published: true
-date: 2026-10-26T14:12:25.781Z
+date: 2026-11-01T12:50:55.653Z
 tags: helpers, kubernetes
 editor: markdown
 dateCreated: 2026-02-17T17:11:22.686Z
@@ -123,6 +123,15 @@ velero schedule create n8n-four-times-daily-30d \
   --default-volumes-to-fs-backup \
   --ttl=720h0m0s
 ```
+
+##### Example: 4 times daily for 3 days, daily for 30 days
+
+```bash 
+velero schedule create daily-all-30d   --schedule="0 22 * * *"   --include-namespaces '*'   --default-volumes-to-fs-backup   --ttl=720h0m0s
+
+velero schedule create 3x-daily-all-3d   --schedule="0 6,12,18 * * *"   --include-namespaces '*'   --default-volumes-to-fs-backup   --ttl=72h0m0s
+```
+
 
 ##### Verify Schedules
 
