@@ -2,7 +2,7 @@
 title: Welcome
 description: Welcome
 published: true
-date: 2026-10-26T14:18:30.046Z
+date: 2026-11-05T12:25:06.354Z
 tags: 
 editor: markdown
 dateCreated: 2026-02-13T09:06:58.094Z
@@ -10,7 +10,11 @@ dateCreated: 2026-02-13T09:06:58.094Z
 
 <img src="/pics/che.png"
      style="float:right;width:512px;margin:0 0 0px 0px;" />
-     <br><br><br><br><br><br><br><br>
+     <br>
+     [Personal Github (Joe Speedboat)](https://github.com/joe-speedboat)
+     [Comunity Github (Tuxbull)](https://github.com/Tuxbull-Open-Source)
+     [Ansible Galaxy Roles (Tuxbull)](https://galaxy.ansible.com/ui/standalone/namespaces/29427/)
+     <br><br><br>
 # Bucket List
 * [https://wiki.app.tuxmint.com/en/Overleaf-LaTeX](https://wiki.app.tuxmint.com/en/Overleaf-LaTeX)
 * [OpenTelemetry - Getting Started](https://opentelemetry.io/docs/getting-started/ops/)
