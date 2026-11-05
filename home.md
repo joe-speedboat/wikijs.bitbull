@@ -2,7 +2,7 @@
 title: Welcome
 description: Welcome
 published: true
-date: 2026-11-05T12:25:06.354Z
+date: 2026-11-05T12:25:39.739Z
 tags: 
 editor: markdown
 dateCreated: 2026-02-13T09:06:58.094Z
@@ -15,7 +15,7 @@ dateCreated: 2026-02-13T09:06:58.094Z
      [Comunity Github (Tuxbull)](https://github.com/Tuxbull-Open-Source)
      [Ansible Galaxy Roles (Tuxbull)](https://galaxy.ansible.com/ui/standalone/namespaces/29427/)
      <br><br><br>
-# Bucket List
+# Business Bucket List
 * [https://wiki.app.tuxmint.com/en/Overleaf-LaTeX](https://wiki.app.tuxmint.com/en/Overleaf-LaTeX)
 * [OpenTelemetry - Getting Started](https://opentelemetry.io/docs/getting-started/ops/)
 * ✅ [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install)
