@@ -2,7 +2,7 @@
 title: Win Lin mixed inv
 description: Rundeck mixed inventory for Linux and Windows hosts within same project
 published: true
-date: 2026-10-26T14:12:20.515Z
+date: 2026-11-16T14:01:40.677Z
 tags: ansible, rundeck, linux, windows
 editor: markdown
 dateCreated: 2026-02-15T08:20:35.432Z
@@ -81,18 +81,6 @@ PROJECT: Support
       Gather Facts: yes
       Ignore Host Discovery Errors: yes
       Limit Targets: windows*
-
-    3. Local
-
-    4. File
-      Format: resourcexml
-      File Path: /var/lib/rundeck/manual_nodes.xml
-      Writeable: yes
-
-      <?xml version="1.0" encoding="UTF-8"?>
-      <project>
-        <node name="srv-pgitea-01" hostname="gitea-01:222" username="adm_ansible"/>
-      </project>
 
   Enhancers:
     1. Attribute Match
