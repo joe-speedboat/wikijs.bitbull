@@ -2,7 +2,7 @@
 title: Welcome
 description: Welcome
 published: true
-date: 2026-11-05T12:27:02.005Z
+date: 2026-11-19T05:36:30.864Z
 tags: 
 editor: markdown
 dateCreated: 2026-02-13T09:06:58.094Z
@@ -16,16 +16,15 @@ dateCreated: 2026-02-13T09:06:58.094Z
      [Ansible Galaxy Roles (Tuxbull)](https://galaxy.ansible.com/ui/standalone/namespaces/29427/)
      <br><br><br>
 # Business Bucket List
-* [https://wiki.app.tuxmint.com/en/Overleaf-LaTeX](https://wiki.app.tuxmint.com/en/Overleaf-LaTeX)
+* [OWASP Kubernetes Top 10](https://kubernetes-top10.owasp.org/)  
+* [OWASP Top 10 for Large Language Model Applications](https://owasp.org/projects/top-10-for-large-language-model-applications)
 * [OpenTelemetry - Getting Started](https://opentelemetry.io/docs/getting-started/ops/)
 * ✅ [Miniconda (uv did better job and is fully OpenSource)](https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install)
-* [Event Foto Sharing](https://github.com/Memtly)
 * ✅ [Paperless Document Management](https://docs.paperless-ngx.com/)
 * [OPA & Gatekeeper](https://open-policy-agent.github.io/gatekeeper/website/docs/)
 * [Istio & Kiali](https://istio.io/latest/docs/ops/integrations/kiali/)  
 * [ArgoCD best practice and hands on](https://argo-cd.readthedocs.io/en/stable/)  
-* [OWASP Kubernetes Top 10](https://kubernetes-top10.owasp.org/)  
-
+* [https://wiki.app.tuxmint.com/en/Overleaf-LaTeX](https://wiki.app.tuxmint.com/en/Overleaf-LaTeX)
 
 # Quick and Dirty
 ```bash
